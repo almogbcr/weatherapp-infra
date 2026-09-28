@@ -2,7 +2,6 @@
 k8s/dev/secrets/*.yaml
 k8s/prod/secrets/*.yaml
 
-
 # local env files
 .env
 .env.*
