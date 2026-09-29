@@ -5,3 +5,4 @@ metadata:
   namespace: dev
 data:
   DAILY_REQUEST_LIMIT: "999"
+  
