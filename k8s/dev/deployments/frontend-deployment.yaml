@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: almogbcr/weatherapp-frontend:4b1487f
+          image: almogbcr/weatherapp-frontend:f19f6ab
 
           ports:
             - containerPort: 80
