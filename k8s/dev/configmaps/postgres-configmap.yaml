@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: postgres-configmap
   namespace: dev
-  data:
-    DB_HOST: "postgres"
-    DB_PORT: "5432"
+data:
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
