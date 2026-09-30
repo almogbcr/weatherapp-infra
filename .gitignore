@@ -5,3 +5,5 @@ k8s/prod/secrets/*.yaml
 # local env files
 .env
 .env.*
+
+k8s/dev/certs/*.key
