@@ -1,0 +1,23 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: weatherapp-gateway
+  namespace: dev
+
+spec:
+  gatewayClassName: nginx
+
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: weatherapp.dev.local
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - kind: Secret
+            name: weatherapp-tls
