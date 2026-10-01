@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: {{ .Values.backend.name }}
+  name: {{ .Values.backend.backendName }}
 
   namespace: {{ .Release.Namespace }}
 
@@ -11,15 +11,15 @@ spec:
 
   selector:
     matchLabels:
-      app: {{ .Values.backend.name }}
+      app: {{ .Values.backend.backendName }}
 
   template:
     metadata:
       labels:
-        app: {{ .Values.backend.name }}
+        app: {{ .Values.backend.backendName }}
     spec:
       containers:
-      - name: {{ .Values.backend.name }}
+      - name: {{ .Values.backend.backendName }}
       image: {{ .Values.backend.image.imgRep }}:{{ .Values.backend.image.imgTag }}
       imagePullPolicy: {{ .Values.backend.image.imgPullPol }}
 

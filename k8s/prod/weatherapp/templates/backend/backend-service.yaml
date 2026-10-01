@@ -2,12 +2,12 @@ apiVersion: v1
 kind: service
 
 metadata:
-  name: {{ .Values.backend.name}}
+  name: {{ .Values.backend.backendName }}
   namespace: {{ .Release.Namespace }}
 
   spec:
   selector:
-      app: {{ .Values.backend.name}}
+      app: {{ .Values.backend.backendName }}
   
   ports:
     - port: {{ .Values.backend.ports.containerPort }}

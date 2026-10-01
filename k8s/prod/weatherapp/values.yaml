@@ -1,7 +1,6 @@
 backend:
   replicas: 1
-
-  name: backend
+  backendName: backend
   
   image:
     imgRep: almogbcr/weatherapp-backend
@@ -38,3 +37,37 @@ backend:
 
   service:
     type_cluster: ClusterIP
+---
+frontend:
+  replicas: 1
+  frontendName: frontend
+  
+  image:
+    imgRep: almogbcr/weatherapp-frontend
+    imgTag: "f19f6ab"
+    imgPullPol: ifNotPresent
+  
+  ports:
+    containerPort: 80
+
+  resources:
+    requests:
+      reqCpu: "50m"
+      reqMem: "64Mi"
+    limits:
+      limitCpu: "200m"
+      limitMem: "128Mi"
+  readinessProbe:
+    path: "/"
+    initDelay: 3
+    period: 10
+    timeout: 2
+    failureThreshold: 3
+
+  livenessProbe:
+    path: "/"
+    initDelay: 10
+    period: 20
+    timeout: 2
+    failureThreshold: 3
+            
