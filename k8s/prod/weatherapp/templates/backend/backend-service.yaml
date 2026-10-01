@@ -12,4 +12,4 @@ metadata:
   ports:
     - port: {{ .Values.backend.ports.containerPort }}
       targetPort: {{ .Values.backend.ports.containerPort }}
-  type: {{ .Values.backend.service.type_cluster }}  
+  type: {{ .Values.service.type_cluster }}  

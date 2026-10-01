@@ -28,12 +28,12 @@ spec:
 
       resources:
         requests:
-          cpu: {{ .Values.resources.requests.reqCpu }}
-          memory: {{ .Values.resources.requests.reqMem }}
+          cpu: {{ .Values.frontend.resources.requests.reqCpu }}
+          memory: {{ .Values.frontend.resources.requests.reqMem }}
 
         limits:
-          cpu: {{ .Values.resources.limits.limitCpu }}
-          memory: {{ .Values.resources.limits.limitMem }}
+          cpu: {{ .Values.frontend.resources.limits.limitCpu }}
+          memory: {{ .Values.frontend.resources.limits.limitMem }}
 
       readinessProbe:
         httpGet:
@@ -47,9 +47,9 @@ spec:
 
       livenessProbe:
         httpGet:
-          path: {{ .Values.frontend.livenessnessProbe.path }}
+          path: {{ .Values.frontend.livenessProbe.path }}
           port: {{ .Values.frontend.ports.containerPort }}
-        initialDelaySeconds: {{ .Values.frontend.livenessnessProbe.initDelay }}
+        initialDelaySeconds: {{ .Values.frontend.livenessProbe.initDelay }}
         periodSeconds: {{ .Values.frontend.livenessProbe.period }}
         timeoutSeconds: {{ .Values.frontend.livenessProbe.timeout }}
         failureThreshold: {{ .Values.frontend.livenessProbe.failureThreshold }}

@@ -35,9 +35,9 @@ backend:
   
   daily_request_limit: 999
 
-  service:
-    type_cluster: ClusterIP
----
+service:
+  type_cluster: ClusterIP
+
 frontend:
   replicas: 1
   frontendName: frontend
@@ -70,4 +70,3 @@ frontend:
     period: 20
     timeout: 2
     failureThreshold: 3
-            
