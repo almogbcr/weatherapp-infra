@@ -33,4 +33,8 @@ backend:
     timeout: 2
     failureThreshold: 3
 
+  
+  daily_request_limit: 999
 
+  service:
+    type_cluster: ClusterIP

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-configmap
+  namespace: {{ .Release.Namespace }}
+data:
+  DAILY_REQUEST_LIMIT: "{{ .Values.backend.daily_request_limit }}"
