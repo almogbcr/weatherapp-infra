@@ -1,0 +1,36 @@
+backend:
+  replicas: 1
+
+  name: backend
+  
+  image:
+    imgRep: almogbcr/weatherapp-backend
+    imgTag: "fc4efa2"
+    imgPullPol: ifNotPresent
+
+  ports:
+    containerPort: 8000
+
+  resources:
+    requests:  
+      reqCpu: "100m"
+      reqMem: "128Mi"
+    limits:
+      limitCpu: "500m"
+      limitMem: "256Mi"
+
+  readinessProbe:
+    path: "/health"
+    initDelay: 5
+    period: 10
+    timeout: 2
+    failureThreshold: 3
+
+  livenessProbe:
+    path: "/health"
+    initDelay: 15
+    period: 20
+    timeout: 2
+    failureThreshold: 3
+
+
