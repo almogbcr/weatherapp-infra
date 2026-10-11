@@ -5,7 +5,7 @@ backend:
   image:
     imgRep: almogbcr/weatherapp-backend
     imgTag: "fc4efa2"
-    imgPullPol: ifNotPresent
+    imgPullPol: IfNotPresent
 
   ports:
     containerPort: 8000
@@ -45,7 +45,7 @@ frontend:
   image:
     imgRep: almogbcr/weatherapp-frontend
     imgTag: "f19f6ab"
-    imgPullPol: ifNotPresent
+    imgPullPol: IfNotPresent
   
   ports:
     containerPort: 80
