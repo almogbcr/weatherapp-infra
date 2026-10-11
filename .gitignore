@@ -1,9 +1,10 @@
 #k8s secret
 k8s/dev/secrets/*.yaml
-k8s/prod/secrets/*.yaml
+k8s/prod/weatherapp/secrets/*.yaml
 
 # local env files
 .env
 .env.*
 
 k8s/dev/certs/*.key
+k8s/prod/weatherapp/cert/*.key

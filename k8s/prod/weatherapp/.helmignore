@@ -21,3 +21,8 @@
 .idea/
 *.tmproj
 .vscode/
+
+#k8s secret
+secrets/*.yaml
+
+
