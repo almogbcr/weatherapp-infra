@@ -70,3 +70,18 @@ frontend:
     period: 20
     timeout: 2
     failureThreshold: 3
+
+postgres:
+
+  postgresVer: 16
+
+  resources:
+    requests:
+      reqCpu: "100m"
+      reqMem: "256Mi"
+    limits:
+      limitCpu: "500m"
+      limitMem: "512Mi"
+  storage: 
+    size: 5Gi
+    storageClassName: local-path
