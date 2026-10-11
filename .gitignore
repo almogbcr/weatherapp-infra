@@ -8,3 +8,5 @@ k8s/prod/weatherapp/secrets/*.yaml
 
 k8s/dev/certs/*.key
 k8s/prod/weatherapp/cert/*.key
+
+k8s/cluster/network/calico/
