@@ -6,6 +6,7 @@ metadata:
 spec:
   addresses:
     - 192.168.10.200-192.168.10.200
+    - 192.168.10.150-192.168.10.150
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
