@@ -44,7 +44,7 @@ frontend:
   
   image:
     imgRep: almogbcr/weatherapp-frontend
-    imgTag: "11499b6"
+    imgTag: "286d99e"
     imgPullPol: IfNotPresent
   
   ports:
