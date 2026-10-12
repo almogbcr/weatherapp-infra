@@ -15,7 +15,7 @@ spec:
     - name: https
       protocol: HTTPS
       port: 443
-      hostname: weatherapp.co.il
+      hostname: weatherapp.prod.test
       tls:
         mode: Terminate
         certificateRefs:
