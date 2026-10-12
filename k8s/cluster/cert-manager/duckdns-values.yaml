@@ -1,0 +1,11 @@
+groupName: acme.weatherapp.test
+
+token:
+  existingSecretName: duckdns-token
+
+clusterIssuer:
+  email: almogbcr@gmail.com
+  staging:
+    create: true
+  production:
+    create: falseל
