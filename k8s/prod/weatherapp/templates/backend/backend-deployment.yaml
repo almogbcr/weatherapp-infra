@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.backend.backendName }}
+  name: backend
   namespace: {{ .Release.Namespace }}
 spec:
   replicas: {{ .Values.backend.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.backend.backendName }}
+      app: backend
   template:
     metadata:
       labels:
-        app: {{ .Values.backend.backendName }}
+        app: backend
     spec:
       containers:
-        - name: {{ .Values.backend.backendName }}
+        - name: backend
           image: {{ .Values.backend.image.imgRep }}:{{ .Values.backend.image.imgTag }}
           imagePullPolicy: {{ .Values.backend.image.imgPullPol }}
           ports:
@@ -28,20 +28,21 @@ spec:
               memory: {{ .Values.backend.resources.limits.limitMem }}
           readinessProbe:
             httpGet:
-              path: {{ .Values.backend.readinessProbe.path }}
-              port: {{ .Values.backend.ports.containerPort }}
-            initialDelaySeconds: {{ .Values.backend.readinessProbe.initDelay }}
-            periodSeconds: {{ .Values.backend.readinessProbe.period }}
-            timeoutSeconds: {{ .Values.backend.readinessProbe.timeout }}
-            failureThreshold: {{ .Values.backend.readinessProbe.failureThreshold }}
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
           livenessProbe:
             httpGet:
-              path: {{ .Values.backend.livenessProbe.path }}
-              port: {{ .Values.backend.ports.containerPort }}
-            initialDelaySeconds: {{ .Values.backend.livenessProbe.initDelay }}
-            periodSeconds: {{ .Values.backend.livenessProbe.period }}
-            timeoutSeconds: {{ .Values.backend.livenessProbe.timeout }}
-            failureThreshold: {{ .Values.backend.livenessProbe.failureThreshold }}
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 2
+            failureThreshold: 3
           env:
             - name: DB_HOST
               valueFrom:

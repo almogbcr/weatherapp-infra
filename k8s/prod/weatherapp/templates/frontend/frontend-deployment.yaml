@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.frontend.frontendName }}
+  name: frontend
   namespace: {{ .Release.Namespace }}
 spec:
   replicas: {{ .Values.frontend.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.frontend.frontendName }}
+      app: frontend
   template:
     metadata:
       labels:
-        app: {{ .Values.frontend.frontendName }}
+        app: frontend
     spec:
       containers:
-        - name: {{ .Values.frontend.frontendName }}
+        - name: frontend
           image: {{ .Values.frontend.image.imgRep }}:{{ .Values.frontend.image.imgTag }}
           imagePullPolicy: {{ .Values.frontend.image.imgPullPol }}
           ports:
@@ -28,17 +28,18 @@ spec:
               memory: {{ .Values.frontend.resources.limits.limitMem }}
           readinessProbe:
             httpGet:
-              path: {{ .Values.frontend.readinessProbe.path }}
-              port: {{ .Values.frontend.ports.containerPort }}
-            initialDelaySeconds: {{ .Values.frontend.readinessProbe.initDelay }}
-            periodSeconds: {{ .Values.frontend.readinessProbe.period }}
-            timeoutSeconds: {{ .Values.frontend.readinessProbe.timeout }}
-            failureThreshold: {{ .Values.frontend.readinessProbe.failureThreshold }}
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
           livenessProbe:
             httpGet:
-              path: {{ .Values.frontend.livenessProbe.path }}
-              port: {{ .Values.frontend.ports.containerPort }}
-            initialDelaySeconds: {{ .Values.frontend.livenessProbe.initDelay }}
-            periodSeconds: {{ .Values.frontend.livenessProbe.period }}
-            timeoutSeconds: {{ .Values.frontend.livenessProbe.timeout }}
-            failureThreshold: {{ .Values.frontend.livenessProbe.failureThreshold }}
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 20
+            timeoutSeconds: 2
+            failureThreshold: 3

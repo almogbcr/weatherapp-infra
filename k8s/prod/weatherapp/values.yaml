@@ -18,20 +18,6 @@ backend:
       limitCpu: "500m"
       limitMem: "256Mi"
 
-  readinessProbe:
-    path: "/health"
-    initDelay: 5
-    period: 10
-    timeout: 2
-    failureThreshold: 3
-
-  livenessProbe:
-    path: "/health"
-    initDelay: 15
-    period: 20
-    timeout: 2
-    failureThreshold: 3
-
   
   daily_request_limit: 999
 
@@ -40,7 +26,6 @@ service:
 
 frontend:
   replicas: 1
-  frontendName: frontend
   
   image:
     imgRep: almogbcr/weatherapp-frontend
@@ -57,19 +42,6 @@ frontend:
     limits:
       limitCpu: "200m"
       limitMem: "128Mi"
-  readinessProbe:
-    path: "/"
-    initDelay: 3
-    period: 10
-    timeout: 2
-    failureThreshold: 3
-
-  livenessProbe:
-    path: "/"
-    initDelay: 10
-    period: 20
-    timeout: 2
-    failureThreshold: 3
 
 postgres:
 
