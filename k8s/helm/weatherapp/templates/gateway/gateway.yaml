@@ -15,7 +15,7 @@ spec:
     - name: https
       protocol: HTTPS
       port: 443
-      hostname: weatherappproject.duckdns.org
+      hostname: {{  .Values.gateway.hostname | quote }}
       tls:
         mode: Terminate
         certificateRefs:
