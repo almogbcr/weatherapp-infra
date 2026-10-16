@@ -1,3 +1,4 @@
+{{- if .Values.certificate.enabled }}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -6,7 +7,8 @@ metadata:
 spec:
   secretName: weatherapp-tls
   dnsNames:
-    - weatherappproject.duckdns.org
+    - {{ .Values.gateway.hostname | quote }}
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
+{{- end }}

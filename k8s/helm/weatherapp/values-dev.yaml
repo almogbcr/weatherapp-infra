@@ -1,1 +1,5 @@
-{}
+gateway:
+  hostName: weatherapp.dev.local
+  
+certificate:
+  enable: false
