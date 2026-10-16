@@ -1,5 +1,5 @@
 gateway:
-  hostName: weatherappproject.duckdns.org
-  
+  hostname: weatherappproject.duckdns.org
+
 certificate:
-  enable: true
+  enabled: true
