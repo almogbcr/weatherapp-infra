@@ -6,6 +6,6 @@ token:
 clusterIssuer:
   email: almogbcr@gmail.com
   staging:
-    create: true
+    create: false
   production:
-    create: falseל
+    create: false
