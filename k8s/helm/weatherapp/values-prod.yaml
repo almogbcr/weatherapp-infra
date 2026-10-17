@@ -1,5 +1,13 @@
 gateway:
   hostname: weatherappproject.duckdns.org
 
+backend:
+  image:
+    imgTag: "caf17b1"
+
+frontend:
+  image:
+    imgTag: "0f01147"
+
 certificate:
   enabled: true

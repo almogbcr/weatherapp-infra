@@ -4,7 +4,6 @@ backend:
   
   image:
     imgRep: almogbcr/weatherapp-backend
-    imgTag: "caf17b1"
     imgPullPol: IfNotPresent
 
   ports:
@@ -29,7 +28,6 @@ frontend:
   
   image:
     imgRep: almogbcr/weatherapp-frontend
-    imgTag: "0f01147"
     imgPullPol: IfNotPresent
   
   ports:
