@@ -5,6 +5,6 @@ backend:
     imgTag: "3e23758"
 frontend:
   image:
-    imgTag: "0f01147"
+    imgTag: "3090cae"
 certificate:
   enabled: true
