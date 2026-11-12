@@ -1,5 +1,11 @@
 backend:
   replicas: 1
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 3 
+    targetCPUUtilizationPercentage: 70
   backendName: backend
   
   image:

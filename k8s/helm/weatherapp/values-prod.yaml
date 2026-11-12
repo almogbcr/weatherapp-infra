@@ -1,6 +1,8 @@
 gateway:
   hostname: weatherappproject.duckdns.org
 backend:
+  autoscaling:
+    enabled: true
   image:
     imgTag: "3e23758"
 frontend:
