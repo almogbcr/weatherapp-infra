@@ -7,6 +7,7 @@ backend:
     maxReplicas: 3 
     targetCPUUtilizationPercentage: 70
   backendName: backend
+  automountServiceAccountToken: false
   
   image:
     imgRep: almogbcr/weatherapp-backend
