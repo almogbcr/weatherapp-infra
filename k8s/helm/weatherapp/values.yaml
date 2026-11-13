@@ -53,6 +53,9 @@ frontend:
 postgres:
 
   postgresVer: 16
+  
+  networkPolicy:
+    enabled: false
 
   resources:
     requests:

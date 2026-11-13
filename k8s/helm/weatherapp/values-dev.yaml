@@ -6,5 +6,8 @@ backend:
 frontend:
   image:
     imgTag: "bc7a358"
+postgres:
+  networkPolicy:
+    enabled: true
 certificate:
   enabled: false
