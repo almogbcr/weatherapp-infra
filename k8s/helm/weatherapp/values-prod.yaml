@@ -8,5 +8,8 @@ backend:
 frontend:
   image:
     imgTag: "3090cae"
+postgres:
+  networkPolicy:
+    enabled: true
 certificate:
   enabled: true
