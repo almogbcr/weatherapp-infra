@@ -43,3 +43,5 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 2
             failureThreshold: 3
+      automountServiceAccountToken: {{ .Values.backend.automountServiceAccountToken }}
+      serviceAccountName: weatherapp-backend
