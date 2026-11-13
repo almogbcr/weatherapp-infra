@@ -20,7 +20,7 @@ spec:
        name: 'openweather-db'
 
     spec:
-      serviceAccountName:
+      serviceAccountName: weatherapp-postgres
       automountServiceAccountToken: {{ .Values.automountServiceAccountToken }}
       containers:
         - name: postgres
