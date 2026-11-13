@@ -83,5 +83,5 @@ spec:
                   key: OPENWEATHER_API_KEY
             - name: DATABASE_URL
               value: "postgresql+psycopg://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
-      automountServiceAccountToken: {{ .Values.backend.automountServiceAccountToken }}
+      automountServiceAccountToken: {{ .Values.automountServiceAccountToken }}
       serviceAccountName: weatherapp-backend
