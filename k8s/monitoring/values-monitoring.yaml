@@ -27,7 +27,7 @@ prometheus:
           - source_labels: [__meta_kubernetes_pod_phase]
             regex: Running
             action: keep
-          - source_labels: [__meta_kuberenets_pod_ip]
+          - source_labels: [__meta_kubernetes_pod_ip]
             target_label: __address__
             replacement: '$1:8000'
 grafana:
