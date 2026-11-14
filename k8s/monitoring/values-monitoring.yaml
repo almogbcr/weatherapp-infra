@@ -11,6 +11,25 @@ prometheus:
         cpu: 500m
         memory: 512Mi
     retention: 24h
+    additionalScrapeConfigs:
+      - job_name: weatherapp-backend-prod
+        metrics_path: /metrics
+        scarpe_interval: 30s
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names:
+                - prod
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            regex: backend
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_phase]
+            regex: Running
+            action: keep
+          - source_labels: [__meta_kuberenets_pod_ip]
+            target_label: __address__
+            replacement: '$1:8000'
 grafana:
   resources:
     requests:
@@ -19,3 +38,4 @@ grafana:
     limits:
       cpu: 300m
       memory: 384Mi
+
