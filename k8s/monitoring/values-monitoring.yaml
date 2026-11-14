@@ -14,7 +14,7 @@ prometheus:
     additionalScrapeConfigs:
       - job_name: weatherapp-backend-prod
         metrics_path: /metrics
-        scarpe_interval: 30s
+        scrape_interval: 30s
         kubernetes_sd_configs:
           - role: pod
             namespaces:
