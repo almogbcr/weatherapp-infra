@@ -27,7 +27,8 @@ backend:
       limitMem: "256Mi"
 
   
-  daily_request_limit: 999
+  daily_request_limit: 100
+  global_daily_request_limit: 999
 
 service:
   type_cluster: ClusterIP

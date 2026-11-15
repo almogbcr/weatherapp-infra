@@ -5,3 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   DAILY_REQUEST_LIMIT: "{{ .Values.backend.daily_request_limit }}"
+  GLOBAL_DAILY_REQUEST_LIMIT: "{{ .Values.backend.global_daily_request_limit }}"

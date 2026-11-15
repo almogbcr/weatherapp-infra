@@ -61,6 +61,11 @@ spec:
                 configMapKeyRef:
                   name: backend-configmap
                   key: DAILY_REQUEST_LIMIT
+            - name: GLOBAL_DAILY_REQUEST_LIMIT
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-configmap
+                  key: GLOBAL_DAILY_REQUEST_LIMIT
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
