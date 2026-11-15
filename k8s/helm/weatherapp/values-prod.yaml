@@ -4,7 +4,7 @@ backend:
   autoscaling:
     enabled: true
   image:
-    imgTag: "52ae9d2"
+    imgTag: "5c55daf"
 frontend:
   image:
     imgTag: "5915dbb"
