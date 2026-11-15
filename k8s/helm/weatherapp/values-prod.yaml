@@ -7,7 +7,7 @@ backend:
     imgTag: "52ae9d2"
 frontend:
   image:
-    imgTag: "3090cae"
+    imgTag: "5915dbb"
 postgres:
   networkPolicy:
     enabled: true
